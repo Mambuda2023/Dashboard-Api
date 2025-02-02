@@ -1,0 +1,8 @@
+{
+	"[typescript]": {
+		"editor.defaultFormetter": "dbaeumer.vscode-eslint"
+	},
+	"editor.codeActionOnSave": {
+		"source.fixAll.eslint": true
+	}
+}

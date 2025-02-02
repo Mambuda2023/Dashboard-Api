@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"sourceMap": true,
 		"target": "es2019",
 		"experimentalDecorators": true,
 		"module": "CommonJS",
@@ -14,5 +15,5 @@
 		"strictPropertyInitialization": false,
 		"skipLibCheck": true
 	},
-	"include": ["src/**/*"]
+	"include": ["src/**/*", ".eslintrc.json"]
 }

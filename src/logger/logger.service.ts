@@ -1,7 +1,11 @@
-import { Logger } from 'tslog'
+import { injectable } from 'inversify';
+import 'reflect-metadata';
+import { Logger } from 'tslog';
+import { ILogger } from './logger.interface';
 
-export class LoggerService {
-	public logger: Logger
+@injectable()
+export class LoggerService implements ILogger {
+	public logger: Logger;
 
 	constructor() {
 		this.logger = new Logger({
@@ -9,16 +13,16 @@ export class LoggerService {
 			displayFilePath: 'hidden',
 			displayFunctionName: false,
 			displayInstanceName: false,
-		})
+		});
 	}
-	log(...args: unknown[]) {
-		this.logger.info(...args)
+	log(...args: unknown[]): void {
+		this.logger.info(...args);
 	}
 
-	error(...args: unknown[]) {
-		this.logger.error(...args)
+	error(...args: unknown[]): void {
+		this.logger.error(...args);
 	}
-	warn(...args: unknown[]) {
-		this.logger.warn(...args)
+	warn(...args: unknown[]): void {
+		this.logger.warn(...args);
 	}
 }
